@@ -1,0 +1,91 @@
+/*évite de cacher la page sous le menu du haut de page*/
+main {
+    margin-top: 90px;
+  }
+  /* Cache l'image qui seras utilisée pour un écran de taille inférieur à 619px*/
+  #First img{
+    display: none;
+  }
+  /*création du paragraphe, de sa bordure, de son placement dans la page*/
+  #First p{
+    display: block;
+    width: 33%;
+    background-color: #FFFFFF;
+    opacity: 0.95;
+    border: transparent;
+    border-radius: 20px;
+    margin-left: 30px;
+    padding: 20px;
+    z-index: 2;
+  }
+  /*implémentation d'une image de fond pour accompagner le paragraphe 1*/
+  #Img_background{
+    height: auto;
+    background-image: url("../Pictures/maison.jpg");
+    background-size: 100% ;
+    padding: 10px;
+    background-repeat: no-repeat;
+    text-align:justify;
+  }
+
+  #text_animer{
+    text-align: center;
+    font-size: 75px;
+  }
+
+  #searchbar{
+      margin-left: auto;
+      margin-right: auto;
+      width: 30%;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+  }
+
+  /*placement du paragraphe 2*/
+  #Story {
+    padding: 0 20px 0 20px;
+    text-align: justify;
+    margin: auto;
+  }
+  
+  /*dimensionne la vidéo*/
+  video{
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: auto;
+  }
+  
+  @media screen and (max-width: 950px){
+    /*évite que le paragraphe 1 ne déborde de l'image de fond de la div*/
+    #First p{
+      width: 80%;
+    }
+  }
+  
+  @media screen and (max-width: 619px){
+    /*retire l'image de fond*/
+    #First{
+      background-image: none;
+    }
+    /*fait apparaitre l'image qui n'été pas affichée*/
+    #First img{
+      display: block;
+      width: 100%;
+      margin-left: 5px;
+      border: black 3px solid;
+      border-radius: 20px;
+    }
+    /*redimensionne le paragraphe 1*/
+    #First p{
+      width: 100%;
+      margin-left: 0;
+      padding: 0px 5px 0px 5px ;
+    }
+  
+    /*replace le titre du paragraphe 1 pour éviter que ce dernier soit trop espacé du reste*/
+    h1{
+      margin-left: 15px;
+    }
+  }

@@ -1,0 +1,230 @@
+/*cette page est commune à toutes les pages du sites ce qui permet d'avoir des pages css moins lourdes*/
+/*change la police des pages*/
+*{
+  font-family: 'Inter', sans-serif;
+  font-weight: 2em;
+}
+
+/*Menu horizontal*/
+/*postionne le menu du haut pour qu'il reste visible même si l'utilisateur scroll dans la page et passe au devant de la page dans n'importe quelle cas*/
+#menuhorizontal{
+  position : fixed;
+  top: 0;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0 0 2em #bebebe;
+  z-index: 3;
+}
+/*positionne la searchbar*/
+#searchbox {
+padding: 10px 10px;
+width: 250px;
+}
+/*cache le texte*/
+input:focus::-webkit-input-placeholder {
+color: transparent;
+}
+/*cache le texte*/
+input:focus:-moz-placeholder {
+color: transparent;
+}
+/*cache le texte*/
+input:focus::-moz-placeholder {
+color: transparent;
+}
+/*cache les bordures noir lors de la saisie dans la searchbar*/
+#searchbox input {
+outline: none;
+border-radius: 5px;
+background-color: rgb(72, 69, 126);
+}
+/*change la couleur, le background, la couleur de l'écriture et la taille de l'écriture de la searchbar*/
+#searchbox input[type= "text"] {
+background: url(http://2.bp.blogspot.com/-xpzxYc77ack/VDpdOE5tzMI/AAAAAAAAAeQ/TyXhIfEIUy4/s1600/search-dark.png) no-repeat 10px 6px #fff;
+border-style: hidden;
+font: bold 12px Arial,Sans-serif;
+color: rgb(72, 69, 126);
+width: 55%;
+padding: 8px 15px 8px 30px;
+}
+/*change le style du bouton submit*/
+#button-submit {
+background: rgb(72, 69, 126);
+border-width: 0px;
+padding: 9px 0px;
+width: 23%;
+cursor: pointer;
+font: bold 12px Arial, Helvetica;
+color: #fff;
+}
+/*change le bouton submit lorsque l'utilisateur le survole*/
+#button-submit:hover {
+background: rgb(48, 46, 87);
+}
+/*change le bouton submit lorsque l'utilisateur clique dessus*/
+#button-submit:active {
+background: rgb(48, 46, 87);
+outline: none;
+}
+/*change le style css des liens vers les autres pages*/
+.hyperlink{
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    float: right;
+    margin: 18px 5px 5px 5px;
+}
+/*positionne la petite image animé de fromage sur l'écran qui renvoie a l'accueil*/
+#symbole img{
+  width: 80px;
+  float: left;
+  margin:4px 10px 6px 10px;
+  border-color: #EFEEEE ;
+}
+/*permet de changer le style de la liste et du placement de ces éléments*/
+#menuhorizontal ul{
+    list-style: none;
+    margin: 0px;
+    padding: 5px;
+    overflow: hidden;
+}
+/*change les couleurs de chaques liens lorsque l'utilisateur les survoles*/
+#menuhorizontal li a:hover{
+    background-color: rgb(237,	32,	39);
+    color: white;
+    border-radius: 10px;
+}
+/*change les couleurs de chaques liens lorsque l'utilisateur clique dessus*/
+#menuhorizontal li a.active{
+    background-color: rgb(237,	32,	39);
+    color: white;
+}
+/*évite que lorsque l'utilisateur survole le gif le background change de couleur*/
+#symbole:hover{
+  background-color: #EFEEEE;
+}
+/*permet d'éviter que le menu cache le titre de chaque page*/
+body{
+  padding-top: 25px;
+}
+/*cache le menu déroulant*/  
+#menuderoulant{
+  display: none;
+}  
+@media screen and (max-width: 1060px){
+  /*cache le menu horizontal*/
+  #symbole, .hyperlink{
+    display: none;
+  }
+  /*place le menu déroulant en fixed pour que le menu soit toujours visible même si l'utlisateur scroll la page*/
+  .menu {
+    position: fixed;
+    right: 10px;
+    top: 7px;
+    width: 0px;
+    z-index: 4;
+  }
+  /*cache les liens du menu déroulant*/
+  #hamburger {
+    display: none;
+  }
+  /*change le style de ☰ pour que celui-ci se confonde avec la checkbox et change de couleur*/
+  #hamburger-logo {
+    cursor: pointer;
+    background: white;
+    width: 50px;
+    display: block;
+    color: rgb(237,	32,	39);
+    text-align: right;
+    margin-left: 150px;
+    transform: translateX(-230px);
+    padding: 10px;
+  }
+  /*change le style du menu avec les liens*/
+  #menuderoulant {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    overflow: hidden;
+    border-top: none;
+    border-radius: 20px;
+    opacity: 0.9;
+    width: 1000px;
+    transform: translateX(300px);
+  }
+  /*créer un effet de mouvement a la page lors des translations*/
+  #hamburger-logo,
+  #menuderoulant {
+    transition: 0.7s;
+  }
+  /*fait apparaitre le menu avec les liens si la checkbox est cochée (si l'utilisateur clique sur l'icone menu)*/
+  #hamburger:checked ~ #hamburger-logo,
+  #hamburger:checked ~ #menuderoulant {
+    transform: translate(-230px);
+  }
+  /* change la couleur des liens du menu déroulant*/
+  #menuderoulant a {
+    color: rgb(237,	32,	39);
+    text-decoration: none;
+    padding: 10px;
+  }
+}
+/*Fin du menu vertical*/
+
+/*Foot*/
+/*dimensionne le foot des pages du site*/
+foot div{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(72, 69, 126);
+  margin-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+/*place et change la couleur du texte du foot*/
+foot div h3 {
+  padding-top: 10px;
+  color:#FFFFFF;
+}
+/*change le style de la liste des différentes images des réseaux sociaux*/
+foot div ul{
+  list-style-type: none;
+  display: block;
+}
+/*dimensionne la taille des images des liens vers les réseaux sociaux*/
+foot div ul li{
+  width: 100px;
+  height:100px;
+  display:inline-block;
+}
+/*change la couleur du texte de la fin du foot*/
+i {
+  color:#FFFFFF;
+}
+/*lorsque l'utilisateur survole facebook l'image change de couleur*/
+#fb:hover {
+  color:rgb(114, 100, 237);
+}
+/*lorsque l'utilisateur survole instagramme l'image change de couleur*/
+#insta:hover {
+  color:rgb(237, 0, 245);
+}
+/*lorsque l'utilisateur survole twitter l'image change de couleur*/
+#tw:hover {
+  color:rgb(59, 193, 255);
+}
+/*place le texte de fin et lui donne une couleur*/
+foot div p{
+  clear: both;
+  color:#FFFFFF;
+}
+/*donne une couleur au lien contactez-nous*/
+foot div a {
+  color:#FFFFFF;
+}
+
+/*Fin du foot*/
