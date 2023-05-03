@@ -1,4 +1,4 @@
-// values to keep track of the number of letters typed, which quote to use. etc. Don't change these values.
+// values to keep track of the number of letters typed, which quote to use.
 var i = 0,
     a = 0,
     isBackspacing = false,
@@ -6,17 +6,7 @@ var i = 0,
 
 // Typerwrite text content. Use a pipe to indicate the start of the second line "|".  
 var textArray = [
-  "What do you call an alligator wearing a vest?|An Investigator", 
-  "What do you call a fake noodle?|An Impasta", 
-  "Why shouldn't you write with a broken pencil?|Because it's pointless",
-  "Why couldn't the pirate finish the alphabet?|He kept getting lost a C",
-  "What's brown and sticky?|A stick",
-  "What starts with an E, ends with an E and has one letter in it?|An Envelope",
-  "What has four wheels, and flies?|A Garbage truck",
-  "What do you call a pig that knows Karate?|Pork Chop",
-  "Why did the scarecrow get promoted?|He was out standing in his field.",
-  "I have a step ladder|I never knew my real ladder.",
-  "What kind of shoes do ninjas wear?|Sneakers"
+    "une maison","un appartement"
 ];
 
 // Speed (in milliseconds) of typing.
@@ -27,12 +17,11 @@ var speedForward = 100, //Typing Speed
 
 //Run the loop
 typeWriter("output", textArray);
-
 function typeWriter(id, ar) {
   var element = $("#" + id),
       aString = ar[a],
-      eHeader = element.children("h1"), //Header element
-      eParagraph = element.children("p"); //Subheader element
+      eHeader = document.querySelector('.cursor'), //Header element
+      eParagraph = document.querySelector('.mot'); //Subheader element
   
   // Determine if animation should be typing or backspacing
   if (!isBackspacing) {
@@ -96,3 +85,32 @@ function typeWriter(id, ar) {
     }
   }
 }
+
+const slider = document.querySelector('.gallery');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', e => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', _ => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', _ => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const SCROLL_SPEED = 3;
+  const walk = (x - startX) * SCROLL_SPEED;
+  slider.scrollLeft = scrollLeft - walk;
+});
+
