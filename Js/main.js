@@ -103,3 +103,34 @@ slider.addEventListener('mousemove', e => {
   slider.scrollLeft = scrollLeft - walk;
 });
 
+const searchbar = document.getElementById("searchbar");
+const resultsDiv = document.getElementById("results");
+function searchName(name) {
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => response.json())
+    .then(data => {
+      const resultList = document.createElement("ul");
+      for (let i = 0; i < data.length; i++) {
+        const resultItem = document.createElement("li");
+        resultItem.textContent = data[i].name;
+        resultList.appendChild(resultItem);
+      }
+      resultsDiv.innerHTML = "";
+      if (data.length > 0) {
+        resultsDiv.appendChild(resultList);
+      } else {
+        resultsDiv.textContent = "Aucun résultat trouvé.";
+      }
+    })
+    .catch(error => console.log(error));
+}
+
+searchbar.addEventListener("input", function() {
+  const searchValue = this.value.trim();
+  if (searchValue.length >= 3) {
+    searchName(searchValue);
+  } else {
+    resultsDiv.innerHTML = "";
+  }
+});
+

@@ -158,6 +158,10 @@ main {
     border-radius: 3px;
     font-size: 0;
   }
+
+  #results {
+    margin-top: 10px;
+  } 
   
 
   
