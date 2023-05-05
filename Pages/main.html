@@ -49,27 +49,30 @@
         <div id="Img_background">
             <!--txt bienvenu animé-->
             <div id="text_animer">
-                Vous recherchez
-                <div class="container py-5">
-                    <div class="output" id="output">
-                      <h1 class="cursor"></h1>
-                      <p class="mot"></p>
-                    </div>
-                  </div>
+              <div>Vous rechercher
+                <span
+                   class="txt-rotate"
+                   data-period="2000"
+                   data-rotate='[ "une maison.", "un appartement."]'></span>
+              </div>
             </div>
             <!--searchbar-->
-            <div>
+            <div id="boxsearchbar">
               <input type="text" id="searchbar" placeholder="Rechercher...">
               <button id="searchbutton">Rechercher</button>
+              <input type="checkbox">Maison </input>
+              <input type="checkbox">appartement </input>
             </div>
             <div id="results"></div>
         </div>
         <!--création du premier paragraphe-->
-        <div>
+        <div id="pPara">
+          <div>
             <h1>Bienvenue sur le site officiel de Homerental </h1>
             <div id="First">
             <p>Le Groupe Homerental est le groupe leader spécialiste des portails immobiliers en France. Notre mission est d’offrir à chacun de nos utilisateurs, une expérience immobilière simple et efficace afin qu’ils concrétisent leurs projets d’achat, de vente ou de location en toute sérénité. Avec plus de 20 000 professionnels de l’immobilier, nous mettons à dispositions des Français le plus large choix d’annonces afin de leur faciliter la recherche d’un bien selon leurs critères propres, et répondre à toutes les questions soulevées par la réalisation d’un projet immobilier. Notre ambition est de proposer sur nos 11 sites spécialistes une expérience personnalisée adaptée aux besoins de chacun, afin que chaque vie soit plus simple.</p>
-            </div>  
+            </div>
+          </div>
         </div>
         <br/>
         <ul class="gallery">
