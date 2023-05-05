@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/MatthieuBaum/Projet_Logement/issues"
   },
-  "homepage": "https://github.com/MatthieuBaum/Projet_Logement#readme"
+  "homepage": "https://github.com/MatthieuBaum/Projet_Logement#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "save": "^2.9.0"
+  }
 }
