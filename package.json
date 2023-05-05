@@ -1,0 +1,19 @@
+{
+  "name": "projet_logement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthieuBaum/Projet_Logement.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatthieuBaum/Projet_Logement/issues"
+  },
+  "homepage": "https://github.com/MatthieuBaum/Projet_Logement#readme"
+}
